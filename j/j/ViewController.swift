@@ -2,14 +2,13 @@
 //  ViewController.swift
 //  j
 //
-//  Created by Student on 5/4/17.
-//  Copyright © 2017 Student. All rights reserved.
+//  Created by JackApps on 5/4/17.
+//  Copyright © 2017 JackApps. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    var point = false
     var decimal = 1.0
     var PlusMInus = 0
     var numberOnScreen:Double = 0;
@@ -18,7 +17,7 @@ class ViewController: UIViewController {
     var operation = 0;
     @IBOutlet weak var label: UILabel!
     
-    @IBAction func numbers(_ sender: UIButton) {
+    @IBAction func numbers(_ sender: UIButton) {//These are all of the numbers. I put them in a group so i wouldnt have to make buttons for all of them.
         
         if performingMath == true {
             label.text = String(sender.tag-1)
@@ -90,12 +89,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func decimal(_ sender: Any) {
-        if point == true {
-            Int(numberOnScreen)
-           
-        }
-        label.text = String(numberOnScreen * decimal)
-        point = true
+        label.text = label.text! + "."
+        
     }
     
     
@@ -103,6 +98,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
